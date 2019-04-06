@@ -8,12 +8,8 @@ const moment = new Moment();
 
 class TaskList extends Component {
     state = {
-        tasks: [
-            { id: 0, content: 'Take dog for a walk', createDate: '12.03.2019, 11:11', finishDate: '15.03.2019, 06:21', priority: false, checked: false },
-            { id: 1, content: 'Wash all windows', createDate: '05.03.2019, 21:51', finishDate: '06.03.2019, 12:55', priority: true, checked: false },
-            { id: 2, content: 'Learn new language', createDate: '01.03.2019, 21:37', finishDate: '01.03.2020, 22:19', priority: false, checked: false },
-        ],
-        sortBy: 'priority'
+        tasks: [],
+        sortBy: 'priority',
     }
 
     updateTasks = tasks => this.setState({ tasks });
