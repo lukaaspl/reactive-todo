@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bgColor: #252525;
+}
+
+html,
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size: 10px;
+  background-color: var(--bgColor);
+  color: #ddd;
+  letter-spacing: 1px;
+  padding-bottom: 70px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 20px;
+  font-size: 4rem;
+  text-align: center;
+}
+
+h2 {
+  margin: 35px 0;
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+.task {
+  border: 3px solid #ddd;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 700px;
+  margin: 20px auto;
+  box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, .25);
+}
+
+.priority-sign {
+  position: absolute;
+  right: 5px;
+  top: 0;
+  font-size: 2rem;
+}
+
+.task.priority {
+  background-color: rgba(182, 0, 0, .5);
+}
+
+.task.priority .content {
+  font-weight: bold;
+}
+
+.task.done {
+  background-color: rgba(0, 128, 19, .5);
+}
+
+.date {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding: 8px;
+  padding-bottom: 5px;
+  border-bottom: 1px dashed #555;
+  text-align: center;
+}
+
+.date>div {
+  font-size: 1rem;
+}
+
+.date>div>span {
+  display: block;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.content {
+  position: relative;
+  font-size: 2rem;
+  color: #eee;
+  padding: 0 12px;
+}
+
+.task-nav {
+  margin-top: 15px;
+  display: flex;
+}
+
+.task-nav>button {
+  flex-basis: 100%;
+  border: none;
+  border-radius: 0 0 0 7px;
+  background-color: rgb(0, 128, 19);
+  opacity: .7;
+  color: #fff;
+  font-size: 1rem;
+  padding: 5px 0;
+  text-transform: uppercase;
+  transition: .2s;
+  cursor: pointer;
+}
+
+.task-nav>button>i {
+  margin-right: 5px;
+}
+
+.task-nav>button.uncheck-btn {
+  background-color: rgb(96, 96, 96);
+}
+
+.task-nav>button.delete-btn {
+  border-radius: 0 0 7px 0;
+  background-color: rgb(182, 0, 0);
+}
+
+.task-nav>button:hover {
+  opacity: 1;
+}
+
+.no-task-note {
+  text-align: center;
+  font-size: 2rem;
+  color: #777;
+}
+
+.no-task-note i {
+  margin-right: 10px;
+  font-size: 2.5rem;
+}
+
+.add-task-form {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  max-width: 768px;
+  padding: 20px 0 10px;
+  background-color: rgba(25, 25, 25, .9);
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+  transition: transform .4s;
+}
+
+.add-task-form.minimized {
+  transform: translate(-50%, calc(100% - 20px));
+}
+
+.add-task-form input,
+.add-task-form button {
+  font-family: 'Verdana', sans-serif;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  padding: 0 10px;
+}
+
+.datetime {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  margin-top: 10px;
+}
+
+.datetime>span {
+  margin-right: 2.5px;
+  font-size: 1.2rem;
+}
+
+.add-task-form input[type=text] {
+  width: 100%;
+  height: 30px;
+  padding: 22px 10px;
+  font-size: 1.8rem;
+  border: 2px solid #000;
+  transition: .3s;
+}
+
+.add-task-form input[type=date],
+.add-task-form input[type=time] {
+  height: 30px;
+  margin: 0 2.5px;
+  border: 2px solid #000;
+  transition: .3s;
+}
+
+.priority-checkbox {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  margin-top: 10px;
+}
+
+.priority-checkbox input[type=checkbox] {
+  height: 30px;
+  width: 30px;
+}
+
+.priority-checkbox>span {
+  margin-left: 5px;
+  font-size: 1.2rem;
+}
+
+.add-task-form button {
+  height: 30px;
+  padding: 0 20px;
+  margin-top: 10px;
+  max-width: 200px;
+}
+
+.add-task-form input.input-error {
+  border: 2px solid rgb(255, 1, 1);
+}
+
+button.form-resize {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 0;
+  height: auto;
+  border: none;
+  background: none;
+  color: #fff;
+  cursor: pointer;
+  opacity: .8;
+  outline: none;
+  font-size: 2rem;
+}
+
+button.form-resize:hover {
+  opacity: 1;
+}
+
+.sort-task-form {
+  text-align: center;
+  margin-bottom: -10px;
+}
+
+.sort-task-form label {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.sort-task-form select {
+  border: none;
+  border-bottom: 1px solid #555;
+  background-color: var(--bgColor);
+  padding: 3px 8px;
+  color: #fff;
+  outline: none;
+  font-size: 1.5rem;
+  font-family: 'Raleway', sans-serif;
+}
+
+@media (max-width: 510px) {
+
+  html,
+  body {
+    padding-bottom: 110px;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  .task {
+    border-width: 2px;
+    width: 98%;
+  }
+
+  .options {
+    flex-direction: column;
+  }
+}
